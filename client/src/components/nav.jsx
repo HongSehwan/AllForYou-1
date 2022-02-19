@@ -17,7 +17,6 @@ axios.defaults.xsrfHeaderName = 'X-CSRFTOKEN';
 const Nav = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { isModal } = useSelector((state) => state.loginModalReducer);
   const { isLogin } = useSelector((state) => state.loginReducer);
 
   const handleLogout = () => {

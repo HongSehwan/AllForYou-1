@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import style from "./forYouContentModal.module.css";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { contentsLike } from "../action";
 import { loginModal } from "../action/index";
 
-import { LikeOutlined, LikeFilled } from "@ant-design/icons";
-
-const ForYouContentModal = ({contentsInfo, handleContentInfo}) => {
+const ForYouContentModal = ({ contentsInfo, handleContentInfo }) => {
   const dispatch = useDispatch();
   const { isLogin } = useSelector((state) => state.loginReducer);
   const like = useSelector((state) => state.contentsLikeReducer.likeOnOff);
@@ -71,7 +69,7 @@ const ForYouContentModal = ({contentsInfo, handleContentInfo}) => {
         });
     }
   };
-  
+
   return (
     <div className={style.main} onClick={handleContentInfo}>
       <div className={style.container} onClick={(e) => e.stopPropagation()}>

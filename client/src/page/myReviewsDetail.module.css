@@ -59,6 +59,9 @@
 
 .goReview {
     font-weight: 400;
+    background-color:transparent;
+    border: none;
+    font-size: x-large;
 }
 
 .mydata {
@@ -67,6 +70,8 @@
     margin-top: 1.8em;
     font-size: x-large;
     position: absolute;
+    background-color:transparent;
+    border: none;
 }
 
 .mydata_date {
@@ -165,7 +170,7 @@
         margin: 0;
         padding-top: 0;
         width: 100%;
-        height: 110em;
+        height: 150vh;
     }
 
     .info {
@@ -251,5 +256,9 @@
 
     .pageNationWrap .arrowBox a.arrow img {
         margin-top: 2.5px;
+    }
+    
+    .goReview { 
+        font-size: 4vw;
     }
 }

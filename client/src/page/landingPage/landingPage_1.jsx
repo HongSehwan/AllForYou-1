@@ -12,21 +12,20 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 
 const Wrap = styled.div`
-
   slick-slide{
-    display: none:
+    display: none;
   }
 
   .slick-prev {
-    width:0
+    width: 0;
     position: absolute;
-    left: 20px;
+    left: 10px;
     z-index: 900;
   }
   .slick-next {
-    width:0
+    width: 0;
     position: absolute;
-    right: -40px;
+    right: 35px;
   }
   .slick-prev:before,
   .slick-next:before {
@@ -75,17 +74,14 @@ const Wrap = styled.div`
     background-color: black;
   }
   @media screen and (max-width: 820px) {
-    .slick-prev {
-    width:0
-    position: absolute;
-    left: 0;
-    z-index: 999;
-  }
-  .slick-next {
-    width:0
-    position: absolute;
-    right: -40px;
-  }
+    .slick-prev:before,
+    .slick-next:before {
+      display: none;
+    }
+    .slick-prev,
+    .slick-next {
+      display: none;
+    }
   }
 `;
 

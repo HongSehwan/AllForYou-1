@@ -310,9 +310,9 @@ border: 1px solid rgb(167, 167, 167);
   width: 18rem;
 }
 .btnCancle, .btnOk{
-  width: 3rem;
+  width: 4rem;
   height: 1.7rem;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   border-radius: 0.5rem;
 }
 }

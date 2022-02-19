@@ -35,6 +35,12 @@
   border-width: 15px;
 }
 
+.reviewData {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
 @media screen and (max-width: 711px) {
   .error_message {
     height: 50vh;

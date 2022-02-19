@@ -245,3 +245,10 @@ export const scrollTop = (boolean, number) => {
         }
     };
 };
+
+export const setList = (id) => {
+    return {
+        type: SET_LIST,
+        payload: id
+    };
+};

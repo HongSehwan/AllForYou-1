@@ -2,7 +2,6 @@ import React from "react";
 import style from "./responsiveNav.module.css";
 import axios from "axios";
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from "react-router-dom";
 import { 
   login, 
   loginModal, 

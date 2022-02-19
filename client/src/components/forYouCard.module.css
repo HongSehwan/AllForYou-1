@@ -38,11 +38,6 @@
   white-space: nowrap;
   width: 17rem;
 }
-/* .icon{
-  margin-right: 2.5rem;
-  font-size: 1.2rem;
-  text-align: center;
-} */
 .iconText{
   font-size:0.7rem;
   margin-top: 0.4rem;
@@ -65,9 +60,16 @@
   width: 50%;
   padding: 0.6rem 0;
   box-sizing: border-box;
-  border: 0.1rem solid rgb(181, 181, 181);
+  border-top: 1px solid rgb(181, 181, 181);
+  border-bottom: 1px solid rgb(181, 181, 181);
+  border-left: none;
+  border-right: none;
   color: black;
   font-size: 0.9rem;
+}
+.btnKakao{
+  border-right: none;
+  border-left: 1px solid rgb(181, 181, 181);
 }
 .btnUrl:hover{
   background-color:#b090714b;
@@ -96,6 +98,19 @@
   .container{
   margin-right: 2rem;
   width: 22rem;
+  transition: 0;
+}
+.container:hover{
+    transform: translateY(0px);
+}
+.btnUrl:hover{
+  background-color:#b090714b;
+  color: black;
+  border: 1px solid #b090714b;
+}
+.btnKakao:hover{
+  background-color:#b090714b;
+  border: 1px solid #b090714b;
 }
 }
 
@@ -111,11 +126,6 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 13rem;
-}
-.icon{
-  margin-right: 2rem;
-  font-size: 1rem;
-  text-align: center;
 }
 .iconText{
   font-size:0.6rem;

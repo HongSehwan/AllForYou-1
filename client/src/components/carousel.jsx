@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import axios from "axios";
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import styled from 'styled-components';
 import style from "./carousel.module.css";
-import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from "react-router-dom";
-import { setPost } from "../action";
 
 export const CarouselWrapper = styled.div`
 	max-width: 90vw;
@@ -21,10 +18,11 @@ export const CarouselContents = styled(Slider)`
 `;
 
 export const CarouselItemWrapper = styled.div`
-	&: focus {
+	focus {
 		outline: none;
 	}
 `;
+
 export const CarouselItem = styled.div`
 	overflow: hidden;
 	padding: 1.5vw;
@@ -32,11 +30,9 @@ export const CarouselItem = styled.div`
 `;
 
 const Carousel = () => {
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
     const [centerCard, setCenterCard] = useState(0);
     const [review, setReview] = useState([])
-    
+
     const getPost = () => {
         axios
             .get(`${process.env.REACT_APP_SERVER_URL}/reviews`)
@@ -46,53 +42,57 @@ const Carousel = () => {
                 }
             })
             .catch((err) => {
-                console.log(err)
+                alert(err)
             });
-        }
+    }
 
-	const Settings = {
-		className: 'center',
-		centerMode: true,
-		focusOnSelect: true,
-		infinite: true,
-		draggable: false,
-		slidesToShow: 3,
-		slidesToScroll: 1,
-		speed: 500,
-		beforeChange: (current, next) => setCenterCard(next),
-        responsive:[
+    const Settings = {
+        className: 'center',
+        centerMode: true,
+        focusOnSelect: true,
+        infinite: true,
+        draggable: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        speed: 500,
+        beforeChange: (current, next) => setCenterCard(next),
+        responsive: [
             {
-                breakpoint : 740,
-                settings:{
+                breakpoint: 740,
+                settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
+                    centerPadding: "10px",
                 }
             },
-            {breakpoint : 450,
-                settings:{
+            {
+                breakpoint: 450,
+                settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
+                    centerPadding: "60px",
+                    arrows: false,
                 }
             }
         ]
-	};
+    };
 
-    useEffect(() =>{
+    useEffect(() => {
         getPost()
     }, [])
 
     return (
         <CarouselWrapper>
-			<CarouselContents {...Settings}>
-				{review.map((review, index)=>(
+            <CarouselContents {...Settings}>
+                {review.map((review, index) => (
                     <CarouselItemWrapper key={index}>
-                        <CarouselItem className={style.container} 
+                        <CarouselItem className={style.container}
                             style={{
-								transform: `${index === centerCard ? 'scale(1)' : 'scale(0.8)'}`,
-								opacity: `${index === centerCard ? '1' : '0.5'}`,
-								transition: '0.3s',
-								boxShadow: 'rgb(24 70 23 / 15%) 0px 5px 1vw',
-							}}
+                                transform: `${index === centerCard ? 'scale(1)' : 'scale(0.8)'}`,
+                                opacity: `${index === centerCard ? '1' : '0.5'}`,
+                                transition: '0.3s',
+                                boxShadow: 'rgb(24 70 23 / 15%) 0px 5px 1vw',
+                            }}
                         >
                             <div className={style.contentbox}>
                                 <img className={style.img}
@@ -114,8 +114,8 @@ const Carousel = () => {
                         </CarouselItem>
                     </CarouselItemWrapper>
                 ))}
-			</CarouselContents>
-		</CarouselWrapper>
+            </CarouselContents>
+        </CarouselWrapper>
     );
 };
 

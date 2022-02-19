@@ -11,7 +11,6 @@ const LandingPage_2_1 = () => {
 
   const handleClick = () => {
     navigate("/contents");
-    window.location.replace("/contents");
   };
 
   useEffect(() => {

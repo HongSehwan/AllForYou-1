@@ -7,12 +7,10 @@ import { useNavigate } from "react-router-dom";
 import EditorComponent from "../components/editorComponent.jsx";
 import ReSearchList from "../components/reSearchList";
 import ReCartList from "../components/reCartList";
-// require("dotenv").config();
 
 const ForYouEdit = ({ post }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const state = useSelector(state => state.writingListReducer);
     const { title, category, text, image } = post
     const fileInput = useRef(null);
     const [files, setFiles] = useState([]); //이미지 화면 띄우기

@@ -5,14 +5,14 @@ import Comment from "../components/comment";
 import CommentInput from "../components/commentInput";
 import Recommend from "../components/recommend";
 import { useDispatch, useSelector } from 'react-redux';
-import { setMessageModal,loginModal, setPost, contentsModal } from "../action";
+import { setMessageModal, loginModal, setPost } from "../action";
 import { useNavigate } from "react-router-dom";
 
 const ForYouView = ({ post, isLogin }) => {
-  const {title, category, image} = post
+  const { title, category, image } = post
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { nickname, emaildata } = useSelector((state) => state.loginReducer);
+  const { nickname } = useSelector((state) => state.loginReducer);
   const [comment, setComment] = useState([]);
   const [content, setContent] = useState([]);
   const [likeColor, setLikeColor] = useState(false);
@@ -47,7 +47,6 @@ const ForYouView = ({ post, isLogin }) => {
     axios
       .get(`${process.env.REACT_APP_SERVER_URL}/reviews/like/${post.id}`)
       .then((res) => {
-        console.log(res.data.data)
         if (res.data.data) {
           setLikeColor(true);
         } else {
@@ -116,43 +115,43 @@ const ForYouView = ({ post, isLogin }) => {
       });
   };
 
-      const handleShareUrl = () => {
-        let dummy = document.createElement("input");
-        let text = process.env.REACT_APP_SERVER_URL + `/reviews/${post.id}`;
+  const handleShareUrl = () => {
+    let dummy = document.createElement("input");
+    let text = process.env.REACT_APP_CLIENT_URL + `/foryouview/:${post.id}`;
 
-        document.body.appendChild(dummy);
-        dummy.value = text;
-        dummy.select();
-        document.execCommand("copy");
-        document.body.removeChild(dummy);
-        dispatch(setMessageModal(true, `클립보드 복사 완료 🙌🏻`));
-    };
+    document.body.appendChild(dummy);
+    dummy.value = text;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+    dispatch(setMessageModal(true, `클립보드 복사 완료 🙌🏻`));
+  };
 
-        const handleShareKakao = () => {
-        if (!window.Kakao.isInitialized()) {
-            window.Kakao.init(process.env.REACT_APP_KAKAO_KEY);
-        }
-        window.Kakao.Link.sendDefault({
-            objectType: "feed",
-            content: {
-                title,
-                description: `${category}(때)의 추천 리스트를 공유했습니다!`,
-                imageUrl: image,
-                link: {
-                    mobileWebUrl: `${process.env.REACT_APP_SERVER_URL}/reviews/${post.id}`,
-                    androidExecParams: "test",
-                },
-            },
-            buttons: [
-                {
-                    title: "추천 리스트 공유해서 보기",
-                    link: {
-                        mobileWebUrl: `${process.env.REACT_APP_SERVER_URL}/reviews/${post.id}`,
-                    },
-                },
-            ],
-        });
-    };
+  const handleShareKakao = () => {
+    if (!window.Kakao.isInitialized()) {
+      window.Kakao.init(process.env.REACT_APP_KAKAO_KEY);
+    }
+    window.Kakao.Link.sendDefault({
+      objectType: "feed",
+      content: {
+        title,
+        description: `${category}(때)의 추천 리스트를 공유했습니다!`,
+        imageUrl: image,
+        link: {
+          mobileWebUrl: `${process.env.REACT_APP_CLIENT_URL}/foryouview/:${post.id}`,
+          androidExecParams: "test",
+        },
+      },
+      buttons: [
+        {
+          title: "추천 리스트 공유해서 보기",
+          link: {
+            mobileWebUrl: `${process.env.REACT_APP_CLIENT_URL}/foryouview/:${post.id}`,
+          },
+        },
+      ],
+    });
+  };
 
   useEffect(() => {
     getPostDetail();

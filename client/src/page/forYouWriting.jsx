@@ -2,12 +2,11 @@ import React, { useRef, useState } from "react";
 import axios from 'axios';
 import style from "./forYouWriting.module.css";
 import { useDispatch, useSelector } from 'react-redux'
-import { removeFromList, setMessageModal } from '../action/index';
+import { removeFromList, setMessageModal, addToList, setList } from '../action/index';
 import { useNavigate } from "react-router-dom";
 import EditorComponent from "../components/editorComponent.jsx";
 import SearchList from "../components/searchList";
 import CartList from "../components/cartList";
-// require("dotenv").config();
 
 const ForYouWriting = () => {
     const state = useSelector(state => state.writingListReducer);
@@ -94,13 +93,9 @@ const ForYouWriting = () => {
                         }
                     }
                 )
-                .then((res) => {
-                    if (res.status === 409) {
-                        console.log('!!!!')
-                    }
-                })
                 .then(() => {
                     navigate('/foryou');
+                    dispatch(setList(''));
                     dispatch(setMessageModal(true, '게시글 작성이 완료되었습니다.'));
                 })
                 .catch((err) => {
@@ -108,7 +103,6 @@ const ForYouWriting = () => {
                 });
         }
     }
-
 
     return (
         <div className={style.container}>

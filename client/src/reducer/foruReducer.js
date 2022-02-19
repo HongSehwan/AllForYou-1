@@ -1,11 +1,12 @@
-import { SET_MESSAGE_MODAL, SET_POST } from "../action/index";
+import { SET_MESSAGE_MODAL, SET_POST, SET_POSTS } from "../action/index";
 
 const initialState = {
     messageModal: {
         isModalOpen: false,
         content: '',
     },
-    post: null
+    post: null,
+    posts: null
 }
 
 const foruReducer = (state = initialState, action) => { //첫번째 인자는 기본값, 두번째 인자는 액션

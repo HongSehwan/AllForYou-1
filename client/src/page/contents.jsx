@@ -1,6 +1,5 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import style from "./contents.module.css";
-import dummy2 from "../dummy/dummy2";
 import ContentsPage_carousel from "../components/contentsPage_carousel";
 import ContentsPage_carousel_firstSelect from "../components/contentsPage_carousel_firstSelect";
 import ContentsPage_secondSelect from "../components/contentsPage_secondSelect";
@@ -49,6 +48,7 @@ const Contents = () => {
   useEffect(() => {
     getContentstList();
     dataLike();
+    window.scrollTo(0, 0);
   }, [like, contentsSearch]);
 
   const select_1_category = contentsList.filter((el) => {
@@ -125,12 +125,15 @@ const Contents = () => {
   const handleSelect_3 = (select) => {
     setSelect_3(select.target.value);
   };
-
   const handleFollow = () => {
     if (selectLength > 100) {
       // 100 이상이면 버튼이 보이게
       dispatch(scrollTop(true, window.pageYOffset));
-    } else if (selectLength < 100 || selectLength === 0) {
+    }
+    if (selectLength < 1) {
+      dispatch(scrollTop(false, window.pageYOffset));
+    }
+    if (selectLength < 600 || selectLength === 0) {
       // 100 이하면 버튼이 사라지게
       dispatch(scrollTop(false, window.pageYOffset));
     }

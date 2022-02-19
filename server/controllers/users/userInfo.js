@@ -18,7 +18,17 @@ module.exports = async (req, res) => {
       where: { user_id: id },
       attributes: [ "createdAt" ],
       include: [
-        { model: contents, attributes: [ "id", "title" ]},
+        { model: contents, attributes: [ 
+          "id", 
+          "title", 
+          "director",
+          "image",
+          "year",
+          "runtime",
+          "summary",
+          "genres",
+          "link"
+        ]},
         { model: reviews, attributes: [ "id", "title" ]}
       ],
       order: [['createdAt', 'DESC']],

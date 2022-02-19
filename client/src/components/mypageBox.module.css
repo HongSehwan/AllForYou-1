@@ -4,7 +4,7 @@
 
 .container {
     display: block;
-    margin: 6em 5em 0 18vw;
+    margin: 5em 5em 0 18vw;
     padding: 0.5em 0 0 20vw;
     width: 60vw;
     height: 25em;
@@ -22,6 +22,7 @@
 .reviewsMore_button {
     display: flex;
     margin-left: 50vw;
+    margin-bottom: 0.3em;
     width: 5vw;
     font-size: 1.7em;
     font-weight: bold;
@@ -37,6 +38,7 @@
 .reviewBox {
     display: flex;
     margin-right: 2vw;
+    height: 7vh;
     border-bottom: 2px solid black;
 }
 
@@ -54,6 +56,7 @@
 .likesMore_button {
     display: flex;
     margin-left: 50vw;
+    margin-bottom: 0.3em;
     width: 5vw;
     font-size: 1.7em;
     font-weight: bold;
@@ -217,8 +220,8 @@
     }
 
     .empty_reviewbox {
-        padding: 13vh 15vw 0 0;
-        width: 100vw;
+        padding: 13vh 5vw 0 0;
+        width: 100%;
         text-align: center;
         font-size: 6vw;
     }
@@ -232,8 +235,8 @@
     }
 
     .empty_likesbox {
-        padding: 15vh 20vw 0 0;
-        width: 110vw;
+        padding: 15vh 5vw 0 0;
+        width: 100%;
         text-align: center;
         font-size: 4.8vw;
     }
@@ -322,7 +325,7 @@
     .myReviewData {
         width: 70vw;
         font-size: 3vw;
-        margin: 2em 4em 0.2em 0.5em;
+        margin: 1.8em 4em 0.2em 0.5em;
     }
 
     .mydata_reviewDate {
@@ -331,14 +334,14 @@
         font-size: 3vw;
     }
     .empty_reviewbox {
-        padding-right: 8vw;
-        width: 100vw;
+        padding-right: 5vw;
+        width: 100%;
         text-align: center;
         font-size: 6vw;
     }
     .empty_likesbox {
-        padding-right: 20vw;
-        width: 110vw;
+        padding-right: 5vw;
+        width: 100%;
         text-align: center;
         font-size: 4.8vw;
     }

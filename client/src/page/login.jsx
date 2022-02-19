@@ -8,13 +8,11 @@ import {
   signupModal,
   setGoogleLogin,
   setKakaoLogin,
-  setMessageModal
-} from '../action/index';
+  setMessageModal,
+} from "../action/index";
 
 const Login = () => {
   const dispatch = useDispatch();
-  const { isState } = useSelector((state) => state.signupModalReducer);
-  const { isModal } = useSelector((state) => state.loginModalReducer);
 
   const [errorMessage, setErrorMessage] = useState("");
   const [failMessage, setFailMessage] = useState(false);
@@ -59,17 +57,19 @@ const Login = () => {
           setEmail("");
           setPassword("");
           handleLoginModal();
-          dispatch(setMessageModal(true, "정상적으로 로그인 되었습니다."))
-          window.location.reload('/');
+          dispatch(setMessageModal(true, "정상적으로 로그인 되었습니다."));
+          window.location.reload("/");
         })
         .catch((err) => {
-          if (err.response.data.message === "존재하지 않는 계정입니다." ) {
-            setErrorMessage("존재하지 않는 계정입니다.")
+          if (err.response.data.message === "존재하지 않는 계정입니다.") {
+            setErrorMessage("존재하지 않는 계정입니다.");
             setTimeout(function () {
               setErrorMessage("");
             }, 3000);
-          } else if(err.response.data.message === "비밀번호가 일치하지 않습니다.") {
-            setErrorMessage("올바른 비밀번호가 아닙니다.")
+          } else if (
+            err.response.data.message === "비밀번호가 일치하지 않습니다."
+          ) {
+            setErrorMessage("올바른 비밀번호가 아닙니다.");
             setTimeout(function () {
               setErrorMessage("");
             }, 3000);
@@ -113,32 +113,40 @@ const Login = () => {
     dispatch(loginModal(false));
   };
 
-const handlekakaoLogin = async () => {
-  await window.location.assign(`${process.env.REACT_APP_SERVER_URL}/users/kakao`);
-  dispatch(login(true));
-  dispatch(loginModal(false))
-  dispatch(setKakaoLogin(true))
-  dispatch(setMessageModal(true, "정상적으로 로그인 되었습니다."))
-};
+  const handlekakaoLogin = async () => {
+    await window.location.assign(
+      `${process.env.REACT_APP_SERVER_URL}/users/kakao`
+    );
+    dispatch(login(true));
+    dispatch(loginModal(false));
+    dispatch(setKakaoLogin(true));
+    dispatch(setMessageModal(true, "정상적으로 로그인 되었습니다."));
+  };
 
-const handlegoogleLogin= async () => {
-  await window.location.assign(`${process.env.REACT_APP_SERVER_URL}/users/google`);
-  dispatch(login(true));
-  dispatch(loginModal(false))
-  dispatch(setGoogleLogin(true))
-  dispatch(setMessageModal(true, "정상적으로 로그인 되었습니다."))
-};
+  const handlegoogleLogin = async () => {
+    await window.location.assign(
+      `${process.env.REACT_APP_SERVER_URL}/users/google`
+    );
+    dispatch(login(true));
+    dispatch(loginModal(false));
+    dispatch(setGoogleLogin(true));
+    dispatch(setMessageModal(true, "정상적으로 로그인 되었습니다."));
+  };
 
-const handleCancleBtn = () => {
-  dispatch(loginModal(false))
-}
+  const handleCancelBtn = () => {
+    dispatch(loginModal(false));
+  };
 
   return (
     <>
       <div className={style.body} onClick={modalOutSide}>
         <div className={style.container}>
-          <button className={style.cancleBox} >
-            <img className={style.cancleBtn} src="/image/x_icon.png" onClick={handleCancleBtn} />
+          <button className={style.cancelBox}>
+            <img
+              className={style.cancelBtn}
+              src="/image/x_icon.png"
+              onClick={handleCancelBtn}
+            />
           </button>
           <img className={style.logo} src="/image/logo(background-white).png" />
           <input
@@ -161,7 +169,9 @@ const handleCancleBtn = () => {
             로그인
           </button>
           <span className={style.message}>{errorMessage}</span>
-          <span className={style.oauth_message}>SNS 계정으로 간편 로그인 / 회원가입</span>
+          <span className={style.oauth_message}>
+            SNS 계정으로 간편 로그인 / 회원가입
+          </span>
           <button className={style.google} onClick={handlegoogleLogin}>
             <img className={style.google_icon} src="/image/google_icon.png" />
           </button>
